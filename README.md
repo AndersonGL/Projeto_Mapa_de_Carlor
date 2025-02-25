@@ -5,7 +5,7 @@
 ### Utilizando:
 
 
-**Python**
+**Python e**
 **Bibliotecas (Pandas, Plotly e Matplotlib)**
 
 
