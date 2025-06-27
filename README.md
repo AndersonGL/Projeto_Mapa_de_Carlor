@@ -66,3 +66,28 @@ source .venv/bin/activate  # Linux/macOS
 pip install -r requirements.txt
 
 
+
+import pandas as pd
+import plotly.express as px
+
+# Carregar dados
+df = pd.read_csv("data/exemplo.csv")
+
+# Criar mapa de calor
+fig = px.density_mapbox(
+    df,
+    lat="latitude",
+    lon="longitude",
+    z="valor",
+    radius=25,
+    center=dict(lat=df.latitude.mean(), lon=df.longitude.mean()),
+    zoom=4,
+    mapbox_style="carto-positron",
+)
+
+fig.write_html("mapa_calor.html")
+
+
+
+
+
